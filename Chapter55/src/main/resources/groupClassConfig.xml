@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<suite name="suiteName">
+    <test name="RunAll">
+        <classes>
+            <class name="com.source.testng.groupClass.groupOfStudent1"/>
+            <class name="com.source.testng.groupClass.groupOfStudent2"/>
+            <class name="com.source.testng.groupClass.groupOfTeacher"/>
+        </classes>
+    </test>
+
+    <test name="OnlyRunStudent">
+        <groups>
+            <run>
+                <include name="Student1"/>
+                <include name="Student2"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.source.testng.groupClass.groupOfStudent1"/>
+            <class name="com.source.testng.groupClass.groupOfStudent2"/>
+            <class name="com.source.testng.groupClass.groupOfTeacher"/>
+        </classes>
+    </test>
+
+
+</suite>
