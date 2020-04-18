@@ -2,7 +2,7 @@ package com.source.testng;
 
 import org.testng.annotations.Test;
 
-// 这是一个忽略测试
+/**这是一个忽略测试*/
 public class IgnoreTest {
 
     @Test
