@@ -1,7 +1,5 @@
 package com.source.testng.Parameter;
 
-
-
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
