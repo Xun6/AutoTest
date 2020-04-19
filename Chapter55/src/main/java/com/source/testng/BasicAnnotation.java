@@ -13,6 +13,7 @@ public class BasicAnnotation {
     @Test
     public void testCase1(){
         System.out.println("这是测试用例 1");
+        System.out.printf("Thread Id : %s%n",Thread.currentThread().getId());  //打印线程id
     }
 
 
