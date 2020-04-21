@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<suite name="extentName">
+    <test name="testName">
+        <classes>
+            <class name="com.ExtentReport.test.extentReportDemo">
+                <methods>
+                    <include name="testMethod1"/>
+                    <include name="testMethod2"/>
+                    <include name="testMethod3"/>
+                    <include name="logDemo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!--    监听器-->
+    <listeners>
+        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>
+    </listeners>
+</suite>
