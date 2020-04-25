@@ -1,0 +1,12 @@
+java -jar moco-runner-<version>-standalone.jar http -p 12306 -c foo.json
+
+    * moco-runner-<version>-standalone.jar ：表示.jar包的存放绝对路径
+
+    * 12306 ：表示端口号
+
+    * foo.json ：表示创建的 .jaon配置文件
+
+    * http ：表示 server 协议类型
+
+
+- 打开浏览器访问 localhost:8888/demo
