@@ -1,0 +1,28 @@
+[
+  {
+    "description": "这是一个不带参数的 get mock方法",
+    "request": {
+      "uri": "/getDemo",
+      "method": "get"
+    },
+    "response": {
+      "text": "这是我的一个不带参数的get请求！！！"
+    }
+
+  },
+  {
+    "description": "这是一个带参数的 get mock方法",
+    "request": {
+      "uri": "/getWithParamiter",
+      "method": "get",
+      "queries": {
+        "name": "yuxunzhi",
+        "age": "18"
+      }
+    },
+    "response": {
+      "text": "我胡汉三又又又回来了！！！！"
+    }
+  }
+
+]
