@@ -1,0 +1,19 @@
+[
+  {
+    "description": "这是mock的 get 方法请求",
+    "request": {
+      "uri": "/getDemo1",
+      "method": "get",
+      "queries": {
+        "name": "zhangsan",
+        "age": "20"
+      }
+    },
+    "response": {
+      "text": "这是模拟的一个带参数的get请求，success  ！！！！",
+      "headers":{
+        "Content-Type":"text/html;charset=utf-8"
+      }
+    }
+  }
+]
