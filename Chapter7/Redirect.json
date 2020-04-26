@@ -1,0 +1,25 @@
+[
+  {
+    "description": "mock 重定向到百度",
+    "request": {
+      "uri": "/redirect"
+    },
+    "redirectTo": "http://www.baidu.com"
+  },
+  {
+    "description": "mock 重定向我自己的地址",
+    "request": {
+      "uri": "/redirect/toMySelf"
+    },
+    "redirectTo": "/MySelf"
+  },
+  {
+    "description": "被重定向的地址",
+    "request": {
+      "uri": "/MySelf"
+    },
+    "response": {
+      "text": "重定向成功了～～～"
+    }
+  }
+]
