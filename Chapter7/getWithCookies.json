@@ -1,6 +1,20 @@
 [
   {
-    "description": "mock 一个带cookie的个体请求",
+    "description": "这是一个会返回cookies信息的 get请求",
+    "request": {
+      "uri": "/getCookies",
+      "method": "get"
+    },
+    "response": {
+      "cookies": {
+        "login": "true",
+        "status": "100000"
+      },
+      "text": "恭喜你，获取cookies成功了！！！"
+    }
+  },
+  {
+    "description": "mock 一个带cookie的get请求",
     "request": {
       "uri": "/get/with/cookies",
       "method": "get",
