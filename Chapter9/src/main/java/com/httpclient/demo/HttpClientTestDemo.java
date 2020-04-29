@@ -20,7 +20,7 @@ public class HttpClientTestDemo {
         //用来执行get方法
         HttpClient client = new DefaultHttpClient();
         HttpResponse response = client.execute(get);
-        result = EntityUtils.toString(response.getEntity(),"utf-8");
+        result = EntityUtils.toString(response.getEntity(),"utf-8");     //获取响应内容
         System.out.println(result);
     }
 }
