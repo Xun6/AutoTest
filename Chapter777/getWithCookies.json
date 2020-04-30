@@ -11,5 +11,18 @@
     "response": {
       "text": "这个携带cookie的请求，访问成功了！！！"
     }
+  },
+  {
+    "description": "mock 一个会返回 cookies 的 get 请求",
+    "request": {
+      "uri": "/get/back/cookies",
+      "method": "get"
+    },
+    "response": {
+      "cookies": {
+        "token": "true"
+      },
+      "text": "恭喜你，成功获取返回的cookies信息！！"
+    }
   }
 ]

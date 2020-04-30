@@ -18,6 +18,12 @@
             <artifactId>httpclient</artifactId>
             <version>4.1.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.10</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 
