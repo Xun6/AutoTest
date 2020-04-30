@@ -1,0 +1,15 @@
+[
+  {
+    "description": "mock 一个携带 cookies 的get请求",
+    "request": {
+      "uri": "/get/with/cookies",
+      "method": "get",
+      "cookies": {
+        "token": "true"
+      }
+    },
+    "response": {
+      "text": "这个携带cookie的请求，访问成功了！！！"
+    }
+  }
+]
