@@ -1,5 +1,18 @@
 [
   {
+    "description": "这是一个会返回 cookies信息的 get请求",
+    "request": {
+      "uri": "/getBackCookies",
+      "method": "get"
+    },
+    "response": {
+      "cookies": {
+        "login": "true"
+      },
+      "text": "get请求的 cookie信息返回成功了！！！"
+    }
+  },
+  {
     "description": "mock 一个带有 cookies 的post请求",
     "request": {
       "uri": "/post/with/cookies",
@@ -16,7 +29,7 @@
       "status": 200,
       "json": {
         "huhansan": "success",
-        "status": 1,
+        "status": "1",
         "text": "我的带cookies的post请求访问成功了！！！"
       }
     }
