@@ -11,10 +11,11 @@
 
     <artifactId>Chapter101010</artifactId>
 
-    <!--配置共有属性-->
+    <!--配置swagger共有版本属性-->
     <properties>
         <swagger.version>2.6.1</swagger.version>
     </properties>
+
 
     <dependencies>
         <dependency>
