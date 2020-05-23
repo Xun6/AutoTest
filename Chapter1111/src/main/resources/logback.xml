@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<!--如下是按照课程配置的配置内容-->
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <property name="FILE_LOG_PATTERN" value="%d{yyyy-mm-dd HH:mm:ss.SSS} [%thread] %-5level %logger{80} - %msg%n"/>
+    <property name="LOG_PATH" value="${LOG_PATH:-${java.io.tmpdir:-/tmp}}}"/>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>
+            ${LOG_PATH}/${LOG_FILE}
+        </file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOG_PATH}/${LOG_FILE}.%d{yyyy-MM-dd}
+            </fileNamePattern>
+        </rollingPolicy>
+        <encoder charset="UTF-8">
+            <pattern>
+                ${FILE_LOG_PATTERN}
+            </pattern>
+        </encoder>
+    </appender>
+
+
+    <appenser name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encode>
+            <pattern>
+                ${FILE_LOG_PATTERN}
+            </pattern>
+        </encode>
+    </appenser>
+
+
+    <appender name="CRAWLER_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>
+            ${LOG_PATH}/event.log
+        </file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOG_PATH}/event.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>
+                %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="com.business.intelligence.util.Crawlerlogger" level="INFO" additivity="false">
+        <appender-ref ref="CEAWLER_LOG"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+
+</configuration>
