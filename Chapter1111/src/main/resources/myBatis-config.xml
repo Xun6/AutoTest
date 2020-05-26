@@ -11,6 +11,6 @@
         <package name="com.xiaoyu.module"/>
     </typeAliases>
     <mappers>
-        <mapper resource="mapper/***.xml"/>
+        <mapper resource="mapper/mysql.xml"/>    <!-- 我的 mysql.xml文件-->
     </mappers>
 </configuration>

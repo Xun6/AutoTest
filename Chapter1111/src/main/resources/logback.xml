@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
-
 <!--如下是按照课程配置的配置内容-->
 <configuration>
-
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <property name="FILE_LOG_PATTERN" value="%d{yyyy-mm-dd HH:mm:ss.SSS} [%thread] %-5level %logger{80} - %msg%n"/>
     <property name="LOG_PATH" value="${LOG_PATH:-${java.io.tmpdir:-/tmp}}}"/>
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>
-            ${LOG_PATH}/${LOG_FILE}
-        </file>
+        <file>${LOG_PATH}/${LOG_FILE}</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>
                 ${LOG_PATH}/${LOG_FILE}.%d{yyyy-MM-dd}
@@ -52,13 +47,11 @@
 
 
     <logger name="com.business.intelligence.util.Crawlerlogger" level="INFO" additivity="false">
-        <appender-ref ref="CEAWLER_LOG"/>
+        <appender-ref ref="CRAWLER_LOG"/>
     </logger>
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </root>
-
-
 </configuration>
