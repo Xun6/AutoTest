@@ -6,8 +6,13 @@
 
 <!--我要执行的sql语句-->
 <mapper namespace="com.xiaoyu">
+<!--    获取 User 表内的用户数-->
     <select id="getUserCount2" resultType="Integer">
         select count(*) from user;
     </select>
 
+<!--    添加用户到 User 表-->
+    <insert id="addUser2" parameterType="com.xiaoyu.module.User">
+        insert into user(id,name,age,sex) values(#{id},#{name},#{age},#{sex})
+    </insert>
 </mapper>
