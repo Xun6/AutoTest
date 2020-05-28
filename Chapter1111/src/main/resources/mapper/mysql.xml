@@ -15,4 +15,16 @@
     <insert id="addUser2" parameterType="com.xiaoyu.module.User">
         insert into user(id,name,age,sex) values(#{id},#{name},#{age},#{sex})
     </insert>
+
+
+<!--    编辑更新用户-->
+    <update id="updateUserData2" parameterType="com.xiaoyu.module.User">
+        update user set name=#{name},age=#{age} where id=#{id}
+    </update>
+
+
+<!--    删除用户-->
+    <delete id="delUserData2" parameterType="Integer">
+        delete from user where id=#{id}
+    </delete>
 </mapper>
