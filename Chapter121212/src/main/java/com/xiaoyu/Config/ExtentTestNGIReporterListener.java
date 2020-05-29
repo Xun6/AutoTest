@@ -1,4 +1,4 @@
-package com.ExtentReport.test;
+package com.xiaoyu.Config;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -16,7 +16,7 @@ import java.util.*;
 
 
 /**
- * 这是一个Tesing extent report 配置，配置一次终生使用 嘿嘿
+ * 这是一个Tesing extent report（测试报告） 配置，配置一次终生使用 嘿嘿
  * */
 public class ExtentTestNGIReporterListener implements IReporter{
     //生成的路径以及文件名

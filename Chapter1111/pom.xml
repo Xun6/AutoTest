@@ -18,7 +18,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-<!--            为了解决Logback configuration error detected问题，引入如下依赖-->
+<!--            为了解决Logback configuration error detected问题，排除logging的引用-->
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
