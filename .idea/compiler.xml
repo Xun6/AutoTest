@@ -7,9 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Chapter1111" />
+        <module name="Chapter999" />
         <module name="Chapter121212" />
         <module name="Chapter666" />
-        <module name="Chapter999" />
         <module name="Chapter55" />
         <module name="Chapter101010" />
       </profile>
