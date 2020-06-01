@@ -34,7 +34,6 @@ public class ConfigFile {
 
         testUrl = hostAddress + uri;
 
-
         return testUrl;
 
     }
