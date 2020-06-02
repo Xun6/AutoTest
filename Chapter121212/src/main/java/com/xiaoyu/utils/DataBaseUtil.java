@@ -13,7 +13,7 @@ public class DataBaseUtil {
         //获取配置的资源文件
         Reader reader = Resources.getResourceAsReader("datebaseConfig.xml");
 
-        //加载配置文件
+        //加载配置的资源文件
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader);
 
         //sqlSession用来执行配置文件中的sql语句
