@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+//这是一个官方例子
 @Controller
 @EnableAutoConfiguration
 public class SampleController {
