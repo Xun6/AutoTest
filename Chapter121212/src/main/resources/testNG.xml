@@ -17,31 +17,32 @@
                     <include name="addUser"/>
                 </methods>
             </class>
-            <!--<class name="com.tester.cases.GetUserInfoTest">-->
-            <!--<methods>-->
-            <!--<include name="getUserInfo"/>-->
-            <!--</methods>-->
-            <!--</class>-->
-            <!--<class name="com.tester.cases.UpdateUserInfoTest">-->
-            <!--<methods>-->
-            <!--<include name="updateUserInfo"/>-->
-            <!--<include name="deleteUser"/>-->
-            <!--</methods>-->
-            <!--</class>-->
+            <class name="com.xiaoyu.cases.GetUserInfoTest">
+                <methods>
+                    <include name="getUserInfo"/>
+                </methods>
+            </class>
+            <class name="com.xiaoyu.cases.UpdateUserInforTest">
+                <methods>
+                    <include name="updateUserInfo"/>
+                    <include name="deleteUser"/>
+                </methods>
+            </class>
 
-<!--            <class name="com.tester.cases.GetUserInfoListTest">-->
-<!--                <methods>-->
-<!--                    <include name="getUserListInfo"/>-->
-<!--                </methods>-->
-<!--            </class>-->
+            <class name="com.xiaoyu.cases.GetUserInfoListTest">
+                <methods>
+                    <include name="getUserListInfo"/>
+                </methods>
+            </class>
         </classes>
 
 
 
     </test>
 
+<!--    自己加的监听器-->
     <listeners>
-        <listener class-name="com.tester.config.ExtentTestNGIReporterListener" />
+        <listener class-name="com.xiaoyu.Config.ExtentTestNGIReporterListener" />
     </listeners>
 
 </suite>

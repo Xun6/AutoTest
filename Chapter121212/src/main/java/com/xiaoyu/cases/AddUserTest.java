@@ -2,7 +2,7 @@ package com.xiaoyu.cases;
 
 import com.xiaoyu.Config.TestConfig;
 import com.xiaoyu.modul.AddUserCase;
-import com.xiaoyu.modul.User;
+import com.xiaoyu.modul.UserCase;
 import com.xiaoyu.utils.DataBaseUtil;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -29,7 +29,7 @@ public class AddUserTest {
 
         //查询用户看是否添加成功
         Thread.sleep(2000);
-        User user = session.selectOne("addUser",addUserCase);   //实例化我的modul中的User类对象，并执行配置文件（SQLMapper.xml）中的sql语句（按id匹配）
+        UserCase user = session.selectOne("addUser",addUserCase);   //实例化我的modul中的UserCase类对象，并执行配置文件（SQLMapper.xml）中的sql语句（按id匹配）
         System.out.println(user.toString());  //打印出 user结果
 
         //判断返回结果是否满足期望
@@ -51,7 +51,7 @@ public class AddUserTest {
         post.setHeader("content-type","application/json");
         //将参数信息添加到方法中
         StringEntity entity = new StringEntity(param.toString(),"utf-8");  //实例化请求体，并传入设置的参数
-        post.setEntity(entity);  //调用 setEntit()方法，使post请求体生效
+        post.setEntity(entity);  //调用 setEntity()方法，使post请求体生效
         //设置 cookies
         TestConfig.defaultHttpClient.setCookieStore(TestConfig.store);  //传入之前登陆接口获取的cookies信息
         //声明一个对象来进行响应结果的存储

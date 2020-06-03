@@ -3,7 +3,7 @@ package com.xiaoyu.modul;
 import lombok.Data;
 
 @Data
-public class User {
+public class UserCase {
 
     private int id;
     private String userName;
@@ -14,7 +14,7 @@ public class User {
     private String isDelete;
 
 
-    //复写一个 toString方法,把字段按照json格式进行拼接
+    //重写一个 toString方法,把字段按照json格式进行拼接
     @Override
     public String toString(){
         return(

@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- 命名空间mapper,如果有多个mapper文件，这个必须唯一 -->
-<mapper namespace="com.tester.model">
+<mapper namespace="com.xiaoyu.modul">
 
     <!--获取登陆接口case,匹配我的 modul 中的类-->
     <select id="loginCase1" parameterType="Integer"  resultType="com.xiaoyu.modul.LoginCase">
@@ -38,7 +38,7 @@
 
 
     <!--添加用户接口-->
-    <select id="addUser" parameterType="com.xiaoyu.modul.AddUserCase" resultType="com.xiaoyu.modul.User">
+    <select id="addUser" parameterType="com.xiaoyu.modul.AddUserCase" resultType="com.xiaoyu.modul.UserCase">
         select * from user where
         userName=#{userName}
         and password=#{password}
@@ -50,14 +50,14 @@
 
 
     <!--获取用户信息，匹配我的 modul 中的类-->
-    <select id="getUserInfo" parameterType="com.xiaoyu.modul.GetUserInfoCase" resultType="com.xiaoyu.modul.User">
+    <select id="getUserInfo" parameterType="com.xiaoyu.modul.GetUserInfoCase" resultType="com.xiaoyu.modul.UserCase">
         <!-- SQL语句 -->
         select * from user where id=#{userId};
     </select>
 
 
     <!--获取用户列表，匹配我的 modul 中的类-->
-    <select id="getUserList" parameterType="com.xiaoyu.modul.GetUserListCase" resultType="com.xiaoyu.modul.User">
+    <select id="getUserList" parameterType="com.xiaoyu.modul.GetUserListCase" resultType="com.xiaoyu.modul.UserCase">
         <!-- SQL语句 -->
         select * from user
         <trim prefix="WHERE" prefixOverrides="and">
@@ -76,7 +76,7 @@
 
 
     <!--获取更新后的数据，匹配我的 modul 中的类-->
-    <select id="getUpdateUserInfo" parameterType="com.xiaoyu.modul.UpdateUserInfoCase" resultType="com.xiaoyu.modul.User">
+    <select id="getUpdateUserInfo" parameterType="com.xiaoyu.modul.UpdateUserInfoCase" resultType="com.xiaoyu.modul.UserCase">
         select * from user
         <trim prefix="WHERE" prefixOverrides="and">
             <if test="null != userName and '' !=userName">

@@ -23,6 +23,7 @@ import static sun.plugin2.main.server.LiveConnectSupport.getResult;
 //登录测试
 public class LoginTest {
 
+    //使用组依赖（groups），适用于跨文件处理测试用例
     @BeforeTest(groups = "Login",description = "这是测试前准备工作")
     public void beforTest(){
         TestConfig.getUserInfoUrl = ConfigFile.getUrl(InterfaceName.GETUSERINFO);  //调用拼接的 url 地址,赋值给配置类（TestConfig）中设置的变量
@@ -31,7 +32,7 @@ public class LoginTest {
         TestConfig.loginUrl = ConfigFile.getUrl(InterfaceName.LOGIN);
         TestConfig.updateUserInfoUrl = ConfigFile.getUrl(InterfaceName.UPDATEUSERINFO);
 
-        TestConfig.defaultHttpClient = new DefaultHttpClient();   //实例化 defaultHttpClient
+        TestConfig.defaultHttpClient = new DefaultHttpClient();   //实例化 defaultHttpClient，方便后面调用
 
     }
 
@@ -54,7 +55,7 @@ public class LoginTest {
         SqlSession session = DataBaseUtil.getSqlSession();
         LoginCase loginCase = session.selectOne("loginCase1",2);
         System.out.println(loginCase.toString());
-        System.out.println(TestConfig.loginUrl);  //输出拼接的接口url
+        System.out.println(TestConfig.loginUrl);  //打印 拼接的接口url
 
         //对返回结果进行测试，判断结果是否符合预期
         String result = getResult(loginCase);    //定义结果变量（result），调用下面创建的 getResult()方法，且传参需满足 loginCase 类中的字段
