@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE configuration
-        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
@@ -12,7 +11,7 @@
 <!--                加载数据库驱动-->
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
 <!--                数据库连接地址  为了解决字符问题加入了 ?characterEncoding=utf8-->
-                <property name="url" value="jdbc:mysql://191.168.1.23:3306/xiaoyu?characterEncoding=utf8"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/xiaoyu?characterEncoding=utf8"/>
 <!--                数据库用户-->
                 <property name="username" value="root"/>
 <!--                数据库密码-->

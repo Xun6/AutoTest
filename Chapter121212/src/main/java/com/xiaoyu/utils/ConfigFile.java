@@ -6,7 +6,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
- * 这是一个工具类，完成拼接 url 的工作
+ * 这是一个封装的工具类，完成拼接 url 的工作
  * */
 public class ConfigFile {
 

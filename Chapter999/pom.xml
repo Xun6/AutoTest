@@ -24,6 +24,14 @@
             <version>6.10</version>
             <scope>compile</scope>
         </dependency>
+
+
+<!--        为了解决java.lang.NoClassDefFoundError: org/apache/commons/logging/LogFactory问题，引入此包-->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
     </dependencies>
 
 

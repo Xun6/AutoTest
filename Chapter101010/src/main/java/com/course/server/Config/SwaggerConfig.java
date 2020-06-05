@@ -10,7 +10,10 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-//swagger配置(需要先引入依赖库)
+/**
+ * 这是 封装的 swagger配置类
+ * 需要先引入依赖包
+ * */
 @Configuration    //表示专门加载配置文件
 @EnableSwagger2    //引入依赖的注解
 public class SwaggerConfig {

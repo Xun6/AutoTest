@@ -36,7 +36,7 @@
         select * from updateUserInfoCase where id = #{id};
     </select>
 
-
+    
     <!--添加用户接口-->
     <select id="addUser" parameterType="com.xiaoyu.modul.AddUserCase" resultType="com.xiaoyu.modul.UserCase">
         select * from user where
