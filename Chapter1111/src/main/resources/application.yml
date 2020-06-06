@@ -17,6 +17,6 @@ spring:
 
 
 mybatis:
-  type-aliases-package: com.xiaoyu.module
+  type-aliases-package: com.course.module
   mapper-locations:
     - mapper/*

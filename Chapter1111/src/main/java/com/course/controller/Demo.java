@@ -1,6 +1,6 @@
-package com.xiaoyu.controller;
+package com.course.controller;
 
-import com.xiaoyu.module.User;
+import com.course.module.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.log4j.Log4j;

@@ -5,20 +5,20 @@
 
 
 <!--我要执行的sql语句-->
-<mapper namespace="com.xiaoyu">
+<mapper namespace="com.course">
 <!--    获取 User 表内的用户数-->
     <select id="getUserCount2" resultType="Integer">
         select count(*) from user;
     </select>
 
 <!--    添加用户到 User 表-->
-    <insert id="addUser2" parameterType="com.xiaoyu.module.User">
+    <insert id="addUser2" parameterType="com.course.module.User">
         insert into user(id,name,age,sex) values(#{id},#{name},#{age},#{sex})
     </insert>
 
 
 <!--    编辑更新用户-->
-    <update id="updateUserData2" parameterType="com.xiaoyu.module.User">
+    <update id="updateUserData2" parameterType="com.course.module.User">
         update user set name=#{name},age=#{age} where id=#{id}
     </update>
 

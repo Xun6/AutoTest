@@ -65,28 +65,31 @@ public class LoginTest {
     }
 
 
-//    private String getResult(LoginCase loginCase) throws IOException {
-//        //下面的代码是写完接口的测试代码
+    private String getResult(LoginCase loginCase) throws IOException {
+        //下面的代码是写完接口的测试代码
+        System.out.println(TestConfig.loginUrl);
+
+        HttpPost post = new HttpPost("http://www.baidu.com");  //post请求接口url
 //        HttpPost post = new HttpPost(TestConfig.loginUrl);  //post请求接口url
-//        JSONObject param = new JSONObject();   //将java参数代码封装为json字符串
-//        param.put("userName",loginCase.getUserName());  //设置输入参数，与我的 loginCase 类中封装参数一致，通过特定方法 getUserName()调用
-//        param.put("password",loginCase.getPassword());
-//        //设置请求头信息 设置header
-//        post.setHeader("content-type","application/json");
-//        //将参数信息添加到方法中
-//        StringEntity entity = new StringEntity(param.toString(),"utf-8");
-//        post.setEntity(entity);
-//        //声明一个对象来进行响应结果的存储
-//        String result;
-//        //执行post方法
-//        HttpResponse response = TestConfig.defaultHttpClient.execute(post);  //调用TestConfig中定义好的 defaultHttpClient 对象
-//        //获取响应结果
-//        result = EntityUtils.toString(response.getEntity(),"utf-8");
-//        System.out.println(result);
-//        //获取cookies信息
-//        TestConfig.store = TestConfig.defaultHttpClient.getCookieStore();
-//        return result;
-//
-//
-//    }
+        JSONObject param = new JSONObject();   //将java参数代码封装为json字符串
+        param.put("userName",loginCase.getUserName());  //设置输入参数，与我的 loginCase 类中封装参数一致，通过特定方法 getUserName()调用
+        param.put("password",loginCase.getPassword());
+        //设置请求头信息 设置header
+        post.setHeader("content-type","application/json");
+        //将参数信息添加到方法中
+        StringEntity entity = new StringEntity(param.toString(),"utf-8");
+        post.setEntity(entity);
+        //声明一个对象来进行响应结果的存储
+        String result;
+        //执行post方法
+        HttpResponse response = TestConfig.defaultHttpClient.execute(post);  //调用TestConfig中定义好的 defaultHttpClient 对象
+        //获取响应结果
+        result = EntityUtils.toString(response.getEntity(),"utf-8");
+        System.out.println(result);
+        //获取cookies信息
+        TestConfig.store = TestConfig.defaultHttpClient.getCookieStore();
+        return result;
+
+
+    }
 }

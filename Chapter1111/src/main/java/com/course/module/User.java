@@ -1,4 +1,4 @@
-package com.xiaoyu.module;
+package com.course.module;
 
 
 import lombok.Data;

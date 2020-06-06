@@ -1,4 +1,4 @@
-package com.xiaoyu.swaggerConfig;
+package com.course.swaggerConfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
