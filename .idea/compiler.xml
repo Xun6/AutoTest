@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -11,6 +12,7 @@
         <module name="Chapter666" />
         <module name="Chapter999" />
         <module name="Chapter55" />
+        <module name="Chapter13131313" />
         <module name="Chapter101010" />
       </profile>
     </annotationProcessing>
@@ -19,6 +21,7 @@
       <module name="Chapter101010" target="1.8" />
       <module name="Chapter1111" target="1.8" />
       <module name="Chapter121212" target="1.8" />
+      <module name="Chapter13131313" target="1.8" />
       <module name="Chapter55" target="1.8" />
       <module name="Chapter666" target="6" />
       <module name="Chapter999" target="1.8" />
@@ -29,6 +32,7 @@
       <module name="Chapter101010" options="-parameters" />
       <module name="Chapter1111" options="-parameters" />
       <module name="Chapter121212" options="-parameters" />
+      <module name="Chapter13131313" options="-parameters" />
       <module name="Chapter55" options="-parameters" />
       <module name="Chapter666" options="-parameters" />
       <module name="Chapter999" options="-parameters" />
