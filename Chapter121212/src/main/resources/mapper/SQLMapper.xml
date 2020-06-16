@@ -41,7 +41,7 @@
     
     <!--添加用户接口-->
     <select id="addUser" parameterType="com.xiaoyu.modul.AddUserCase" resultType="com.xiaoyu.modul.UserCase">
-        select * from user where
+        select * from userCase where
         userName=#{userName}
         and password=#{password}
         and sex=#{sex}
@@ -54,14 +54,14 @@
     <!--获取用户信息，匹配我的 modul 中的类-->
     <select id="getUserInfo" parameterType="com.xiaoyu.modul.GetUserInfoCase" resultType="com.xiaoyu.modul.UserCase">
         <!-- SQL语句 -->
-        select * from user where id=#{userId};
+        select * from userCase where id=#{userId};
     </select>
 
 
     <!--获取用户列表，匹配我的 modul 中的类-->
     <select id="getUserList" parameterType="com.xiaoyu.modul.GetUserListCase" resultType="com.xiaoyu.modul.UserCase">
         <!-- SQL语句 -->
-        select * from user
+        select * from userCase
         <trim prefix="WHERE" prefixOverrides="and">
             <if test="null != userName and '' !=userName">
                 AND userName=#{userName}
@@ -79,7 +79,7 @@
 
     <!--获取更新后的数据，匹配我的 modul 中的类-->
     <select id="getUpdateUserInfo" parameterType="com.xiaoyu.modul.UpdateUserInfoCase" resultType="com.xiaoyu.modul.UserCase">
-        select * from user
+        select * from userCase
         <trim prefix="WHERE" prefixOverrides="and">
             <if test="null != userName and '' !=userName">
                 AND userName=#{userName}

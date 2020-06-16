@@ -5,6 +5,7 @@ logging:
   path: logs
   file: mylogs.log
 
+
 spring:
   application:
     name: myFirstTest
@@ -16,6 +17,6 @@ spring:
 
 
 mybatis:
-  type-aliases-package: com.xiaoyu.module
+  type-aliases-package: com.course.module
   mapper-locations:
     - mapper/*

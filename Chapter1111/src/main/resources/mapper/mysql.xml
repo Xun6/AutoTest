@@ -8,23 +8,23 @@
 <mapper namespace="com.course">
 <!--    获取 User 表内的用户数-->
     <select id="getUserCount2" resultType="Integer">
-        select count(*) from user;
+        select count(*) from userCase;
     </select>
 
 <!--    添加用户到 User 表-->
     <insert id="addUser2" parameterType="com.course.module.User">
-        insert into user(id,name,age,sex) values(#{id},#{name},#{age},#{sex})
+        insert into userCase(id,name,age,sex) values(#{id},#{name},#{age},#{sex})
     </insert>
 
 
 <!--    编辑更新用户-->
     <update id="updateUserData2" parameterType="com.course.module.User">
-        update user set name=#{name},age=#{age} where id=#{id}
+        update userCase set name=#{name},age=#{age} where id=#{id}
     </update>
 
 
 <!--    删除用户-->
     <delete id="delUserData2" parameterType="Integer">
-        delete from user where id=#{id}
+        delete from userCase where id=#{id}
     </delete>
 </mapper>
