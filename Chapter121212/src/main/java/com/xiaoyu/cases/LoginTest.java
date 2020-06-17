@@ -44,9 +44,10 @@ public class LoginTest {
         System.out.println(loginCase.toString());   //输出loginCase的结果
         System.out.println(TestConfig.loginUrl);  //输出接口地址
 
-//        //对返回结果进行测试，判断结果是否符合预期
-//        String result = getResult(loginCase);
-//        Assert.assertEquals(loginCase.getExpected(),result);
+        //发起请求，获取结果
+        String result = getResult(loginCase);   //调用getResult()封装方法
+        //判断结果是否满足期望结果
+        Assert.assertEquals(loginCase.getExpected(),result);
     }
 
 
@@ -58,19 +59,17 @@ public class LoginTest {
         System.out.println(TestConfig.loginUrl);  //打印 拼接的接口url
 
 
-
-//        //对返回结果进行测试，判断结果是否符合预期
-//        String result = getResult(loginCase);    //定义结果变量（result），调用下面创建的 getResult()方法，且传参需满足 loginCase 类中的字段
-//        Assert.assertEquals(loginCase.getExpected(),result);
+        //发起请求，获取结果
+        String result = getResult(loginCase);  //调用getResult()封装方法
+        //判断结果是否满足期望结果
+        Assert.assertEquals(loginCase.getExpected(),result);
     }
 
 
-    private String getResult(LoginCase loginCase) throws IOException {
-        //下面的代码是写完接口的测试代码
-        System.out.println(TestConfig.loginUrl);
 
-        HttpPost post = new HttpPost("http://www.baidu.com");  //post请求接口url
-//        HttpPost post = new HttpPost(TestConfig.loginUrl);  //post请求接口url
+    //封装的发起请求方法
+    private String getResult(LoginCase loginCase) throws IOException {
+        HttpPost post = new HttpPost(TestConfig.loginUrl);  //post请求接口url
         JSONObject param = new JSONObject();   //将java参数代码封装为json字符串
         param.put("userName",loginCase.getUserName());  //设置输入参数，与我的 loginCase 类中封装参数一致，通过特定方法 getUserName()调用
         param.put("password",loginCase.getPassword());
@@ -79,14 +78,14 @@ public class LoginTest {
         //将参数信息添加到方法中
         StringEntity entity = new StringEntity(param.toString(),"utf-8");
         post.setEntity(entity);
-        //声明一个对象来进行响应结果的存储
+        //声明一个对象来储存结果
         String result;
         //执行post方法
         HttpResponse response = TestConfig.defaultHttpClient.execute(post);  //调用TestConfig中定义好的 defaultHttpClient 对象
-        //获取响应结果
+        //获取响应结果，赋值给 result
         result = EntityUtils.toString(response.getEntity(),"utf-8");
         System.out.println(result);
-        //获取cookies信息
+        //获取cookies信息，并赋值给 TestConfig.store
         TestConfig.store = TestConfig.defaultHttpClient.getCookieStore();
         return result;
 

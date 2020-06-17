@@ -13,7 +13,7 @@ public class ConfigFile {
     private static ResourceBundle bundle = ResourceBundle.getBundle("application", Locale.CHINA);
     //工具类一般使用静态方法（static），不用 new 直接使用
     public static String getUrl(InterfaceName name){   //传参必须满足我的枚举类（InterfaceName）的要求
-        String hostAddress = bundle.getString("test.url");   //映射配置文件中的地址
+        String hostAddress = bundle.getString("test.url");   //映射 application.properties 配置文件中的地址
         String uri="";
         String testUrl;   //表示最终完成拼接的 url
         if(name == InterfaceName.ADDUSERINFO){

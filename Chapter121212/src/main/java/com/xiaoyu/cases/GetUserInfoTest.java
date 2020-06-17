@@ -29,50 +29,45 @@ public class GetUserInfoTest {
         System.out.println(TestConfig.getUserInfoUrl); // 打印接口地址（url）
 
 
-//        //下边为写完接口的代码
-//        JSONArray resultJson = getJsonResult(getUserInfoCase);  //把 sql执行结果赋值给 引用变量 resultJson
-//
-//        /**
-//         * 下边三行可以先讲
-//         * */
+        //发送请求，获取结果
+        JSONArray resultJson = getJsonResult(getUserInfoCase);  //响应结果是json格式，所有用 JSONArray resultJson 来接收
+
 //        Thread.sleep(2000);
-//        //定义类（User）对象的引用变量，
-//        UserCase user = session.selectOne(getUserInfoCase.getExpected(),getUserInfoCase);
+        UserCase user = session.selectOne(getUserInfoCase.getExpected(),getUserInfoCase); //调sql查询数据库
 //        System.out.println("自己查库获取用户信息："+user.toString());
-//
-//        List userList = new ArrayList();  //List是一个接口，而ArrayList 是一个类。 ArrayList 继承并实现了List。
-//        userList.add(user);
-//        JSONArray jsonArray = new JSONArray(userList);
-//        System.out.println("获取用户信息"+jsonArray.toString());
-//        System.out.println("调用接口获取用户信息："+resultJson.toString());
-//        //判断是否满足预期
-//        Assert.assertEquals(jsonArray,resultJson);
+        List userList = new ArrayList();
+        //把查询出来的 user放入
+        userList.add(user);
+        //把 查询结果 user 转换成 JSONArray
+        JSONArray jsonArray = new JSONArray(userList);
+        //判断请求获得结果，和自己查询的结果是否一致
+        Assert.assertEquals(jsonArray,resultJson);
     }
 
 
 
-//    private JSONArray getJsonResult(GetUserInfoCase getUserInfoCase) throws IOException {
-//        HttpPost post = new HttpPost(TestConfig.getUserInfoUrl);
-//        JSONObject param = new JSONObject();
-//        param.put("id",getUserInfoCase.getUserId());
-//        //设置请求头 header
-//        post.setHeader("content-type","application/json");
-//        //将参数信息加入到方法中
-//        StringEntity entity = new StringEntity(param.toString(),"utf-8"); //实例化请求体，并传入设置的参数
-//        post.setEntity(entity);   //调用 setEntity()方法，使post请求体生效
-//        //设置cookies
-//        TestConfig.defaultHttpClient.setCookieStore(TestConfig.store);
-//        //声明一个对象来进行结果的存储
-//        String result;
-//        //执行post方法
-//        HttpResponse response = TestConfig.defaultHttpClient.execute(post);
-//        //获取响应结果
-//        result = EntityUtils.toString(response.getEntity(),"utf-8");
-//        System.out.println("调用接口result:"+result);
-//        List resultList = Arrays.asList(result);
-//        JSONArray array = new JSONArray(resultList);
-//        System.out.println(array.toString());
-//        return array;
-//
-//    }
+    private JSONArray getJsonResult(GetUserInfoCase getUserInfoCase) throws IOException {
+        HttpPost post = new HttpPost(TestConfig.getUserInfoUrl);
+        JSONObject param = new JSONObject();  //转换参数为 json格式
+        param.put("id",getUserInfoCase.getUserId());
+        //设置请求头 header
+        post.setHeader("content-type","application/json");
+        //将参数信息加入到方法中
+        StringEntity entity = new StringEntity(param.toString(),"utf-8"); //实例化请求体，并传入设置的参数
+        post.setEntity(entity);   //调用 setEntity()方法，使post请求体生效
+        //设置cookies
+        TestConfig.defaultHttpClient.setCookieStore(TestConfig.store);
+        //声明一个对象来进行结果的存储
+        String result;
+        //执行post方法
+        HttpResponse response = TestConfig.defaultHttpClient.execute(post);
+        //获取响应结果
+        result = EntityUtils.toString(response.getEntity(),"utf-8");
+        //把响应结果转换成 list
+        List resultList = Arrays.asList(result);
+        //把 resultList 转换成 JSONArray
+        JSONArray array = new JSONArray(resultList);
+        return array;  //返回 array
+
+    }
 }
