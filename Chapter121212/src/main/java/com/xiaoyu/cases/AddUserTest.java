@@ -26,9 +26,10 @@ public class AddUserTest {
 
         //发请求，获取结果
         String result = getResult(addUserCase);   //调用getResult()方法，实际发请求操作
+
+        Thread.sleep(3000);  //解决上方请求接口线程没有跑完，就执行了下方的查询语句，产生报错
         //验证返回结果
-//        Thread.sleep(2000);
-        UserCase user = session.selectOne("addUser",addUserCase);   //查询数据库
+        UserCase user = session.selectOne("addUser",addUserCase);   //执行配置文件中的sql语句，查询数据库
         System.out.println(user.toString());  //打印出 user结果
         //判断返回结果是否满足期望结果
         Assert.assertEquals(addUserCase.getExpected(),result);

@@ -51,18 +51,18 @@
     </select>
 
 
-    <!--获取用户信息，匹配我的 modul 中的类-->
+    <!--获取用户信息-->
     <select id="getUserInfo" parameterType="com.xiaoyu.modul.GetUserInfoCase" resultType="com.xiaoyu.modul.UserCase">
         <!-- SQL语句 -->
         select * from userCase where id=#{userId};
     </select>
 
 
-    <!--获取用户列表，匹配我的 modul 中的类-->
+    <!--获取用户列表-->
     <select id="getUserList" parameterType="com.xiaoyu.modul.GetUserListCase" resultType="com.xiaoyu.modul.UserCase">
         <!-- SQL语句 -->
         select * from userCase
-        <trim prefix="WHERE" prefixOverrides="and">
+        <trim prefix="WHERE" prefixOverrides="and">   <!--预处理一个 and-->
             <if test="null != userName and '' !=userName">
                 AND userName=#{userName}
             </if>
@@ -77,10 +77,10 @@
     </select>
 
 
-    <!--获取更新后的数据，匹配我的 modul 中的类-->
+    <!--获取更新后的数据-->
     <select id="getUpdateUserInfo" parameterType="com.xiaoyu.modul.UpdateUserInfoCase" resultType="com.xiaoyu.modul.UserCase">
         select * from userCase
-        <trim prefix="WHERE" prefixOverrides="and">
+        <trim prefix="WHERE" prefixOverrides="and">    <!--预处理一个 and-->
             <if test="null != userName and '' !=userName">
                 AND userName=#{userName}
             </if>
@@ -97,7 +97,7 @@
                 AND isDelete=#{isDelete}
             </if>
         </trim>
-        And id = #{userId};
+        And id = #{userId};  <!--用id来处理更新数据-->
     </select>
 
 </mapper>

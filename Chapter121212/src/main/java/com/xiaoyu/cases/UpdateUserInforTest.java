@@ -47,6 +47,8 @@ public class UpdateUserInforTest {
 
         //发送请求，获取结果，定义一个 result 来接收
         int result = getResult(updateUserInfoCase);
+
+        Thread.sleep(3000);  //解决上方请求接口线程没有跑完，就执行了下方的查询语句，产生报错
         //执行sql语句，查询数据库
         UserCase user = session.selectOne(updateUserInfoCase.getExpected(),updateUserInfoCase);
         //判断查询结果 user不为空
@@ -79,6 +81,6 @@ public class UpdateUserInforTest {
         //获取响应结果
         result = EntityUtils.toString(response.getEntity(),"utf-8");
         System.out.println(result);
-        return Integer.parseInt(result);   //转换成Integer
+        return Integer.parseInt(result);   //强制转换成 Integer类型
     }
 }

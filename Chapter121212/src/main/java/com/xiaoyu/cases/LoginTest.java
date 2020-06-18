@@ -71,7 +71,7 @@ public class LoginTest {
     private String getResult(LoginCase loginCase) throws IOException {
         HttpPost post = new HttpPost(TestConfig.loginUrl);  //post请求接口url
         JSONObject param = new JSONObject();   //将java参数代码封装为json字符串
-        param.put("userName",loginCase.getUserName());  //设置输入参数，与我的 loginCase 类中封装参数一致，通过特定方法 getUserName()调用
+        param.put("userName",loginCase.getUserName());
         param.put("password",loginCase.getPassword());
         //设置请求头信息 设置header
         post.setHeader("content-type","application/json");
@@ -88,7 +88,6 @@ public class LoginTest {
         //获取cookies信息，并赋值给 TestConfig.store
         TestConfig.store = TestConfig.defaultHttpClient.getCookieStore();
         return result;
-
 
     }
 }

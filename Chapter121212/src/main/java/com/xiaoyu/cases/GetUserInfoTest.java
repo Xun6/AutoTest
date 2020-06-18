@@ -32,8 +32,9 @@ public class GetUserInfoTest {
         //发送请求，获取结果
         JSONArray resultJson = getJsonResult(getUserInfoCase);  //响应结果是json格式，所有用 JSONArray resultJson 来接收
 
-//        Thread.sleep(2000);
-        UserCase user = session.selectOne(getUserInfoCase.getExpected(),getUserInfoCase); //调sql查询数据库
+        Thread.sleep(3000);  //解决上方请求接口线程没有跑完，就执行了下方的查询语句，产生报错
+        //调sql查询数据库
+        UserCase user = session.selectOne(getUserInfoCase.getExpected(),getUserInfoCase);
 //        System.out.println("自己查库获取用户信息："+user.toString());
         List userList = new ArrayList();
         //把查询出来的 user放入

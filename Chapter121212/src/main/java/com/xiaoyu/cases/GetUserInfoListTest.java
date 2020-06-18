@@ -29,6 +29,8 @@ public class GetUserInfoListTest {
         
         //发送请求，获取结果
         JSONArray resultJson = getJsonResult(getUserListCase);   //响应结果是json格式，所有用 JSONArray resultJson 来接收
+
+        Thread.sleep(3000);  //解决上方请求接口线程没有跑完，就执行了下方的查询语句，产生报错
         //验证结果，泛型是 UserCase
         List<UserCase> userList = session.selectList(getUserListCase.getExpected(),getUserListCase);
         //遍历列表，打印出结果
