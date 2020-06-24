@@ -58,7 +58,7 @@
     </select>
 
 
-    <!--获取用户列表-->
+    <!--获取用户列表信息-->
     <select id="getUserList" parameterType="com.xiaoyu.modul.GetUserListCase" resultType="com.xiaoyu.modul.UserCase">
         <!-- SQL语句 -->
         select * from userCase

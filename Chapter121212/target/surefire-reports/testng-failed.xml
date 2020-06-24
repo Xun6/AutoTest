@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [这是用户管理系统测试套件]">
+  <listeners>
+    <listener class-name="com.xiaoyu.Config.ExtentTestNGIReporterListener"/>
+  </listeners>
+  <test name="这是用户管理系统测试用例(failed)">
+    <classes>
+      <class name="com.xiaoyu.cases.LoginTest">
+        <methods>
+          <include name="loginTrue"/>
+          <include name="beforTest"/>
+        </methods>
+      </class> <!-- com.xiaoyu.cases.LoginTest -->
+      <class name="com.xiaoyu.cases.GetUserInfoListTest">
+        <methods>
+          <include name="getUserListInfo"/>
+        </methods>
+      </class> <!-- com.xiaoyu.cases.GetUserInfoListTest -->
+    </classes>
+  </test> <!-- 这是用户管理系统测试用例(failed) -->
+</suite> <!-- Failed suite [这是用户管理系统测试套件] -->

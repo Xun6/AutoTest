@@ -41,8 +41,10 @@ public class GetUserInfoTest {
         userList.add(user);
         //把 查询结果 user 转换成 JSONArray
         JSONArray jsonArray = new JSONArray(userList);
+        JSONArray jsonArray1 = new JSONArray(resultJson.getString(0));  /*解决期望值与实际值不匹配问题*/
         //判断请求获得结果，和自己查询的结果是否一致
-        Assert.assertEquals(jsonArray,resultJson);
+        Assert.assertEquals(jsonArray.toString(),jsonArray1.toString());  /*解决期望值与实际值不匹配问题*/
+//        Assert.assertEquals(jsonArray,resultJson);
     }
 
 
@@ -68,6 +70,7 @@ public class GetUserInfoTest {
         List resultList = Arrays.asList(result);
         //把 resultList 转换成 JSONArray
         JSONArray array = new JSONArray(resultList);
+        System.out.println(array);   //打印出结果
         return array;  //返回 array
 
     }

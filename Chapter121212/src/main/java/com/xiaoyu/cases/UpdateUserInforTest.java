@@ -28,6 +28,8 @@ public class UpdateUserInforTest {
 
         //发送请求，获取结果，定义一个 result 来接收
         int result = getResult(updateUserInfoCase);
+
+        Thread.sleep(5000);  //解决上方请求接口线程没有跑完，就执行了下方的查询语句，产生报错
         //执行sql语句，查询数据库
         UserCase user = session.selectOne(updateUserInfoCase.getExpected(),updateUserInfoCase);
         //判断查询结果 user不为空
@@ -48,7 +50,7 @@ public class UpdateUserInforTest {
         //发送请求，获取结果，定义一个 result 来接收
         int result = getResult(updateUserInfoCase);
 
-        Thread.sleep(3000);  //解决上方请求接口线程没有跑完，就执行了下方的查询语句，产生报错
+        Thread.sleep(5000);  //解决上方请求接口线程没有跑完，就执行了下方的查询语句，产生报错
         //执行sql语句，查询数据库
         UserCase user = session.selectOne(updateUserInfoCase.getExpected(),updateUserInfoCase);
         //判断查询结果 user不为空

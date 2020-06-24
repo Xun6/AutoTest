@@ -15,7 +15,7 @@ public class LoginCase {
     private String password;
     private String expected;
 
-    public String getExpected() {
+    /*public String getExpected() {
         return expected;
     }
 
@@ -25,5 +25,5 @@ public class LoginCase {
 
     public String getPassword() {
         return password;
-    }
+    }*/
 }

@@ -18,7 +18,6 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-import static sun.plugin2.main.server.LiveConnectSupport.getResult;
 
 //登录测试
 public class LoginTest {
@@ -84,7 +83,7 @@ public class LoginTest {
         HttpResponse response = TestConfig.defaultHttpClient.execute(post);  //调用TestConfig中定义好的 defaultHttpClient 对象
         //获取响应结果，赋值给 result
         result = EntityUtils.toString(response.getEntity(),"utf-8");
-        System.out.println(result);
+        System.out.println(result);   /*打印结果信息*/
         //获取cookies信息，并赋值给 TestConfig.store
         TestConfig.store = TestConfig.defaultHttpClient.getCookieStore();
         return result;

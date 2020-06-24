@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 19.993 sec <<< FAILURE!
+getUserListInfo(com.xiaoyu.cases.GetUserInfoListTest)  Time elapsed: 0.025 sec  <<< FAILURE!
+org.json.JSONException: A JSONArray text must start with '[' at 1 [character 2 line 1]
+	at org.json.JSONTokener.syntaxError(JSONTokener.java:505)
+	at org.json.JSONArray.<init>(JSONArray.java:109)
+	at org.json.JSONArray.<init>(JSONArray.java:162)
+	at com.xiaoyu.cases.GetUserInfoListTest.getJsonResult(GetUserInfoListTest.java:74)
+	at com.xiaoyu.cases.GetUserInfoListTest.getUserListInfo(GetUserInfoListTest.java:31)
+

@@ -12,7 +12,7 @@ public class UpdateUserInfoCase {
     private String permission;
     private String isDelete;
     private String expected;
-
+/*
     public String getExpected() {
         return expected;
     }
@@ -39,5 +39,5 @@ public class UpdateUserInfoCase {
 
     public String getIsDelete() {
         return isDelete;
-    }
+    }*/
 }

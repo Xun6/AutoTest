@@ -8,7 +8,7 @@ public class GetUserListCase {
     private String age;
     private String sex;
     private String expected;
-
+/*
     public String getUserName() {
         return userName;
     }
@@ -23,5 +23,5 @@ public class GetUserListCase {
 
     public String getExpected() {
         return expected;
-    }
+    }*/
 }

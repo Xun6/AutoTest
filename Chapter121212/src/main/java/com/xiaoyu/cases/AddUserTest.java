@@ -21,13 +21,13 @@ public class AddUserTest {
     public void addUser() throws IOException, InterruptedException {
         SqlSession session = DataBaseUtil.getSqlSession();  //定义、调用我的sql语句执行方法类
         AddUserCase addUserCase = session.selectOne("addUserCase1",1);  //实例化我的modul中的AddUserCase类对象，并执行配置文件（SQLMapper.xml）中的sql语句（按id匹配）
-        System.out.println(addUserCase.toString());   //打印 addUserCase 的结果
+        System.out.println(addUserCase.toString());   //打印 addUserCase 的结果,即查询数据库的结果
         System.out.println(TestConfig.addUserUrl);  //打印 添加用户接口地址（url）
 
         //发请求，获取结果
         String result = getResult(addUserCase);   //调用getResult()方法，实际发请求操作
 
-        Thread.sleep(3000);  //解决上方请求接口线程没有跑完，就执行了下方的查询语句，产生报错
+        Thread.sleep(5000);  //解决上方请求接口线程没有跑完，就执行了下方的查询语句，产生报错
         //验证返回结果
         UserCase user = session.selectOne("addUser",addUserCase);   //执行配置文件中的sql语句，查询数据库
         System.out.println(user.toString());  //打印出 user结果

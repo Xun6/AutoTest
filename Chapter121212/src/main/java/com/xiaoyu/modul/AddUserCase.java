@@ -11,7 +11,7 @@ public class AddUserCase {
     private String permission;
     private String isDelete;
     private String expected;
-
+/*
     public String getExpected() {
         return expected;
     }
@@ -38,5 +38,5 @@ public class AddUserCase {
 
     public String getIsDelete(){
         return isDelete;
-    }
+    }*/
 }
