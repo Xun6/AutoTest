@@ -11,9 +11,9 @@
         <module name="Chapter999" />
         <module name="Chapter121212" />
         <module name="Chapter666" />
-        <module name="Chapter101010" />
+        <module name="Chapter1333333333" />
         <module name="Chapter55" />
-        <module name="Chapter13131313" />
+        <module name="Chapter101010" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +23,8 @@
       <module name="Chapter121212" target="1.8" />
       <module name="Chapter1313" target="1.8" />
       <module name="Chapter13131313" target="1.8" />
+      <module name="Chapter13131313 (1)" target="1.8" />
+      <module name="Chapter1333333333" target="1.8" />
       <module name="Chapter55" target="1.8" />
       <module name="Chapter666" target="6" />
       <module name="Chapter999" target="1.8" />
@@ -35,6 +37,8 @@
       <module name="Chapter121212" options="-parameters" />
       <module name="Chapter1313" options="-parameters -extdirs C:\Users\13617\IdeaProjects\Chapter1313/lib" />
       <module name="Chapter13131313" options="-parameters -extdirs C:\Users\13617\IdeaProjects\Chapter13131313/lib" />
+      <module name="Chapter13131313 (1)" options="-parameters -extdirs C:\Users\13617\Desktop\Auto_Test_Demo\AutoTest\Chapter13131313/lib" />
+      <module name="Chapter1333333333" options="-parameters -extdirs C:\Users\13617\Desktop\Auto_Test_Demo\AutoTest\Chapter1333333333/lib" />
       <module name="Chapter55" options="-parameters" />
       <module name="Chapter666" options="-parameters" />
       <module name="Chapter999" options="-parameters" />
