@@ -83,6 +83,6 @@ public class UpdateUserInforTest {
         //获取响应结果
         result = EntityUtils.toString(response.getEntity(),"utf-8");
         System.out.println(result);
-        return Integer.parseInt(result);   //强制转换成 Integer类型
+        return Integer.parseInt(result);   //将字符串解析为 Int 类型
     }
 }

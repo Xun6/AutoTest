@@ -42,7 +42,7 @@ public class UserManager {
         int u = template.selectOne("login", userCase);
         //设置cookies信息
         Cookie cookie = new Cookie("login","true");
-        response.addCookie(cookie);   //返回cookie
+        response.addCookie(cookie);   //响应结果返回cookie
         log.info("查询到的结果是"+u);  //打印log信息
         if(u==1){
             log.info("登录的用户是："+ userCase.getUserName());   //判断为 1 时，打印出查询的用户名
@@ -109,12 +109,12 @@ public class UserManager {
 
     //抽取出来的，验证 cookies信息的方法
     private Boolean verifyCookies(HttpServletRequest request) {
-        Cookie[] cookies = request.getCookies();  //使用数组引用来接收请求参数获取的cookies信息
+        Cookie[] cookies = request.getCookies();  //声明一个数组引用来接收请求参数获取的cookies信息
         if(Objects.isNull(cookies)){
             log.info("cookies为空了！");  //打印出log信息
             return false;
         }
-        //遍历cookies，判断信息是否正确
+        //循环遍历cookies，判断信息是否正确
         for(Cookie cookie:cookies){
             if(cookie.getName().equals("login") &&
                     cookie.getValue().equals("true")){
